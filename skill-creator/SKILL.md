@@ -38,13 +38,13 @@ Before creating a skill, confirm it's the right choice:
 
 | What you need | Use this | Why |
 |---------------|----------|-----|
-| Any reusable AI instruction or workflow | **Skill** (`.builder/skills/<name>/SKILL.md`) | Most flexible option — supports bundled files, scripts, progressive disclosure, and structured context |
-| Background knowledge + supporting files | **Skill** | Reference docs and scripts alongside instructions |
-| Project-wide coding conventions (cross-tool) | `AGENTS.md` | Industry standard recognized by Claude Code, Cursor, and other AI tools |
-| Quick directory-scoped rules | `.builderrules` or `.builder/rules/*.mdc` | Lightweight alternative when you just need a few rules in a specific directory |
+| Any reusable AI instruction or workflow | **Skill** (`.builder/skills/<name>/SKILL.md`) | Loads only when needed — keeps context lean. Supports bundled files, scripts, and progressive disclosure. |
+| Background knowledge + supporting files | **Skill** | Reference docs and scripts alongside instructions, loaded on demand |
+| Instructions the AI should always have | `AGENTS.md` or `.builderrules` | Always loaded into context, like a system prompt. Good for essential project-wide conventions. |
+| Quick directory-scoped rules | `.builderrules` or `.builder/rules/*.mdc` | Lightweight, always-loaded rules scoped to a specific directory |
 | Style rules a linter can enforce | Linter config (ESLint, Prettier, etc.) | Don't burn AI context on mechanical checks |
 
-**Skills are the recommended default** for most AI instructions in Builder.io. They offer the most structure, support bundled files and progressive disclosure, and scale well as your instructions grow. Use AGENTS.md when you need cross-tool compatibility, and .builderrules for quick, lightweight directory-scoped rules.
+**Skills are the recommended default.** Unlike AGENTS.md and .builderrules which are always loaded into the AI's context (consuming tokens every session), skills only load when relevant. This means you can have many skills without bloating the AI's context window. Reserve AGENTS.md for the small set of instructions the AI truly needs in every single conversation.
 
 ### Step 3: Scaffold the Skill
 
