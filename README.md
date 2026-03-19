@@ -44,7 +44,6 @@ After installing, start a new session for the skill to load.
 2. Open your project in Builder and say "I want to create a skill that does X"
 3. The skill-creator will guide you through the process
 
-You can also read the [skill-creator SKILL.md](./skill-creator/SKILL.md) directly for best practices on writing skills.
 
 ## Project Structure
 
