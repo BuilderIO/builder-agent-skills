@@ -8,10 +8,11 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 
 ## Available Skills
 
-| Skill                                     | Description                                                                                    |
-| ----------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| [skill-creator](./skill-creator/)         | Create new skills, improve existing skills, and understand skill best practices for Builder.io |
-| [fusion-to-publish](./fusion-to-publish/) | Register Fusion-built React components for use in Builder.io Publish's visual editor           |
+| Skill                                           | Description                                                                                    |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [skill-creator](./skill-creator/)               | Create new skills, improve existing skills, and understand skill best practices for Builder.io |
+| [fusion-to-publish](./fusion-to-publish/)       | Register Fusion-built React components for use in Builder.io Publish's visual editor           |
+| [fusion-to-publish-v2](./fusion-to-publish-v2/) | Same as above + helper scripts for project detection, component scanning, and registration log |
 
 ## Installation
 
@@ -61,6 +62,15 @@ builder-agent-skills/
 │       ├── sdk-reference.md
 │       ├── scaffolding-templates.md
 │       └── examples.md
+├── fusion-to-publish-v2/    # Enhanced version with scripts and registration log
+│   ├── SKILL.md
+│   ├── references/
+│   │   ├── sdk-reference.md
+│   │   ├── scaffolding-templates.md
+│   │   └── examples.md
+│   └── scripts/
+│       ├── detect-project.sh
+│       └── scan-components.sh
 └── README.md
 ```
 
