@@ -21,9 +21,7 @@ Complete documentation for SKILL.md frontmatter fields.
 Use the **WHAT + WHEN** pattern:
 
 ```yaml
-description: >
-  [WHAT it does]. Use when [WHEN to trigger], [more trigger
-  contexts], even if [near-miss scenario].
+description: [WHAT it does]. Use when [WHEN to trigger], [more trigger contexts], even if [near-miss scenario].
 ```
 
 See the main SKILL.md for detailed good/bad examples.

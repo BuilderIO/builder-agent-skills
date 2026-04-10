@@ -13,11 +13,7 @@ A basic knowledge skill. Single SKILL.md, no supporting files.
 ```yaml
 ---
 name: react-conventions
-description: >
-  React component conventions and patterns for this project. Use when
-  creating new React components, refactoring existing ones, or when
-  asking about component architecture, hooks patterns, or state
-  management in this codebase.
+description: React component conventions and patterns for this project. Use when creating new React components, refactoring existing ones, or when asking about component architecture, hooks patterns, or state management in this codebase.
 ---
 
 # React Conventions
