@@ -46,7 +46,8 @@ Search the project for:
 - `.builderrules` (root and nested directories)
 - `.builder/rules/*.mdc`
 - `agents.md`
-- Common mistakes: `.builderrule` (missing s), `AGENTS.md` (wrong case)
+- Common mistakes: `.builderrule` (missing s)
+- Note: `AGENTS.md` and `agents.md` are both valid — match case-insensitively
 
 ### Step 2: Analyze Each File
 

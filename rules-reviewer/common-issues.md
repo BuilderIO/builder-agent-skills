@@ -66,14 +66,16 @@ globs:
 
 ---
 
-### 3. Missing Frontmatter
+### 3. Missing Frontmatter *(`.mdc` files only)*
+
+> **Note:** `agents.md` does not require frontmatter. This issue applies only to `.builder/rules/*.mdc` files.
 
 **Symptoms:**
 - Rules not being applied correctly
 - No scoping of rules
 - Missing context for AI
 
-**Detection:** Check if `.mdc` files start with `---` frontmatter block.
+**Detection:** Check if `.mdc` files start with `---` frontmatter block. Do not flag `agents.md` for missing frontmatter.
 
 **Impact:** Without frontmatter, the AI doesn't know when to apply rules or what they're for.
 
@@ -131,8 +133,9 @@ globs:
 | Wrong | Correct |
 |-------|---------|
 | `.builderrule` | `.builderrules` |
-| `AGENTS.md` | `agents.md` |
 | `.builder/rules/foo.md` | `.builder/rules/foo.mdc` |
+
+> **Note:** `AGENTS.md` and `agents.md` are both valid — agents file matching is case-insensitive.
 
 **Fix:** Rename files to match conventions exactly.
 

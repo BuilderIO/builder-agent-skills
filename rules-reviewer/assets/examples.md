@@ -365,7 +365,7 @@ Mobile-first approach:
 | Aspect | Guideline |
 |--------|-----------|
 | **File size** | < 150 lines preferred, never > 200 |
-| **Frontmatter** | Always include description + globs |
+| **Frontmatter** | Always include description + globs (`.mdc` files only; `agents.md` does not require frontmatter) |
 | **alwaysApply** | Use sparingly (max 3-5 files total) |
 | **Globs** | Specific patterns, not `**/*` |
 | **Content** | Specific, actionable, not vague |
