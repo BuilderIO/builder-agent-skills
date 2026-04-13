@@ -39,9 +39,9 @@ npx builder-doctor install-skill skill-creator
 ## Rule Reviewer
 Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`).
 
-Ask Builder to `run npx builder-doctor install-skill rule-reviewer` and it will be installed in your project. Or you can run locally with:
+Ask Builder to `run npx builder-doctor install-skill rules-reviewer` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx builder-doctor install-skill rule-reviewer
+npx builder-doctor install-skill rules-reviewer
 ```
 
 ### Reviewing rules
