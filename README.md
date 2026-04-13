@@ -53,9 +53,16 @@ Ask Builder to `Review my rules` after installing this skill. You can also ask `
 ## Import Prototype
 Import a Builder.io prototype into the current project using the Builder dev-tools CLI.
 
-Ask Builder to run `npx builder-doctor install-skill import-prototype` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx builder-doctor install-skill import-prototype` and it will be installed in your project. 
+
+Or you can run locally into GitHub CoPilot with:
 ```bash
-npx builder-doctor install-skill import-prototype
+run npx --yes builder-doctor install-skill import-prototype --agent github
+```
+
+Or you can run locally into Claude Code with:
+```bash
+run npx --yes builder-doctor install-skill import-prototype --agent claude
 ```
 
 ### Using the skill

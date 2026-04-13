@@ -32,7 +32,7 @@ Use their answer as the `{prompt}` value. If the user's intent is already clear 
 Run the following command using the Bash tool:
 
 ```bash
-npx @builder.io/dev-tools@latest code --prototype "{builderUrl}" --prompt "{prompt}"
+npx --yes @builder.io/dev-tools@latest code --prototype "{builderUrl}" --prompt "{prompt}"
 ```
 
 Replace `{builderUrl}` with the validated Builder.io URL and `{prompt}` with the user's stated intent.
