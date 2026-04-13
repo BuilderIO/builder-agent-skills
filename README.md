@@ -13,8 +13,42 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [skill-creator](./skill-creator/)               | Create new skills, improve existing skills, and understand skill best practices for Builder.io |
 | [fusion-to-publish](./fusion-to-publish/)       | Register Fusion-built React components for use in Builder.io Publish's visual editor           |
 | [fusion-to-publish-v2](./fusion-to-publish-v2/) | Same as above + helper scripts for project detection, component scanning, and registration log |
+| [rules-reviewer](./rules-reviewer/)               | Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`)   |
 
 ## Installation
+You can install skills by asking Builder to `run npx builder-doctor` which will give you an option to install a skill. You can also quickly add a specific skill by asking:
+- `npx builder-doctor install-skill skill-creator`
+- `npx builder-doctor install-skill fusion-to-publish`
+- `npx builder-doctor install-skill rules-reviewer`
+
+
+## Skill Creator
+Create new skills, improve existing skills, and understand skill best practices for Builder.io
+
+Ask Builder to `run npx builder-doctor install-skill skill-creator` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill skill-creator
+```
+
+### Creating Your Own Skills
+
+1. Install the **skill-creator** skill into your Builder.io project (see Installation above)
+2. Open your project in Builder and say "I want to create a skill that does X"
+3. The skill-creator will guide you through the process
+
+## Rule Reviewer
+Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`).
+
+Ask Builder to `run npx builder-doctor install-skill rule-reviewer` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill rule-reviewer
+```
+
+### Reviewing rules
+
+Ask Builder to `Review my rules` after installing this skill. You can also ask `run npx builder-doctor rules` which will check for common issues with rule files.
+
+## Manual Installation
 
 Copy any skill directory into your project's `.builder/skills/` folder:
 
@@ -39,40 +73,6 @@ curl -sL https://raw.githubusercontent.com/BuilderIO/builder-agent-skills/main/s
 ```
 
 After installing, start a new session for the skill to load.
-
-## Creating Your Own Skills
-
-1. Install the **skill-creator** skill into your Builder.io project (see Installation above)
-2. Open your project in Builder and say "I want to create a skill that does X"
-3. The skill-creator will guide you through the process
-
-
-## Project Structure
-
-```
-builder-agent-skills/
-├── skill-creator/           # Skill for creating new skills
-│   ├── SKILL.md
-│   └── references/
-│       ├── frontmatter-reference.md
-│       └── examples.md
-├── fusion-to-publish/       # Fusion → Publish component registration
-│   ├── SKILL.md
-│   └── references/
-│       ├── sdk-reference.md
-│       ├── scaffolding-templates.md
-│       └── examples.md
-├── fusion-to-publish-v2/    # Enhanced version with scripts and registration log
-│   ├── SKILL.md
-│   ├── references/
-│   │   ├── sdk-reference.md
-│   │   ├── scaffolding-templates.md
-│   │   └── examples.md
-│   └── scripts/
-│       ├── detect-project.sh
-│       └── scan-components.sh
-└── README.md
-```
 
 ## Contributing
 
