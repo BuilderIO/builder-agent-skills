@@ -19,7 +19,7 @@ Use this template structure when presenting AI rules review results.
 
 ### [filename]
 - **Size**: X lines / Y chars [OK/WARNING/CRITICAL]
-- **Frontmatter**: [Present/Missing/Incomplete]
+- **Frontmatter**: [Present/Missing/Incomplete] *(`.mdc` files only — `agents.md` does not require frontmatter)*
 - **alwaysApply**: [true/false]
 - **Issues found**:
   - Issue 1

@@ -14,12 +14,14 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [fusion-to-publish](./fusion-to-publish/)       | Register Fusion-built React components for use in Builder.io Publish's visual editor           |
 | [fusion-to-publish-v2](./fusion-to-publish-v2/) | Same as above + helper scripts for project detection, component scanning, and registration log |
 | [rules-reviewer](./rules-reviewer/)               | Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`)   |
+| [import-prototype](./import-prototype/)           | Import a Builder.io prototype into the current project using the Builder dev-tools CLI          |
 
 ## Installation
 You can install skills by asking Builder to `run npx builder-doctor` which will give you an option to install a skill. You can also quickly add a specific skill by asking:
 - `npx builder-doctor install-skill skill-creator`
 - `npx builder-doctor install-skill fusion-to-publish`
 - `npx builder-doctor install-skill rules-reviewer`
+- `npx builder-doctor install-skill import-prototype`
 
 
 ## Skill Creator
@@ -47,6 +49,18 @@ npx builder-doctor install-skill rules-reviewer
 ### Reviewing rules
 
 Ask Builder to `Review my rules` after installing this skill. You can also ask `run npx builder-doctor rules` which will check for common issues with rule files.
+
+## Import Prototype
+Import a Builder.io prototype into the current project using the Builder dev-tools CLI.
+
+Ask Builder to run `npx builder-doctor install-skill import-prototype` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill import-prototype
+```
+
+### Using the skill
+
+Share a `https://builder.io/app/projects/...` URL with Builder and say what you want to import (e.g. "import the hero section" or "import the full page design"). The skill will run the Builder dev-tools CLI to pull the prototype into your project.
 
 ## Manual Installation
 
