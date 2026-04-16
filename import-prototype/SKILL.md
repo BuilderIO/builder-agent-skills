@@ -37,6 +37,8 @@ npx --yes @builder.io/dev-tools@latest code --prototype "{builderUrl}" --prompt 
 
 Replace `{builderUrl}` with the validated Builder.io URL and `{prompt}` with the user's stated intent.
 
+IMPORTANT: DO NOT KILL THE TERMINAL. THIS PROCESS MAY TAKE A WHILE TO COMPLETE (MAYBE MINUTES). WAIT FOR IT TO FINISH ON ITS OWN.
+
 ## Gotchas
 
 - **Always validate the URL format** before running the command. Reject URLs that don't start with `https://builder.io/app/projects/`.
