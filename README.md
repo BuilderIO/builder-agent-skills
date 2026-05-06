@@ -15,8 +15,63 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [fusion-to-publish-v2](./fusion-to-publish-v2/) | Same as above + helper scripts for project detection, component scanning, and registration log |
 | [android-native](./android-native/)               | Build and run the Android app on an emulator or physical device using Gradle, `adb`, and `native-run` |
 | [ios-native](./ios-native/)                       | Build and run the iOS app on a simulator or physical device using `xcodebuild` and `native-run` |
+| [rules-reviewer](./rules-reviewer/)               | Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`)   |
+| [import-prototype](./import-prototype/)           | Import a Builder.io prototype into the current project using the Builder dev-tools CLI          |
 
 ## Installation
+You can install skills by asking Builder to `run npx builder-doctor` which will give you an option to install a skill. You can also quickly add a specific skill by asking:
+- `npx builder-doctor install-skill skill-creator`
+- `npx builder-doctor install-skill fusion-to-publish`
+- `npx builder-doctor install-skill rules-reviewer`
+- `npx builder-doctor install-skill import-prototype`
+
+
+## Skill Creator
+Create new skills, improve existing skills, and understand skill best practices for Builder.io
+
+Ask Builder to `run npx builder-doctor install-skill skill-creator` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill skill-creator
+```
+
+### Creating Your Own Skills
+
+1. Install the **skill-creator** skill into your Builder.io project (see Installation above)
+2. Open your project in Builder and say "I want to create a skill that does X"
+3. The skill-creator will guide you through the process
+
+## Rule Reviewer
+Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`).
+
+Ask Builder to `run npx builder-doctor install-skill rules-reviewer` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill rules-reviewer
+```
+
+### Reviewing rules
+
+Ask Builder to `Review my rules` after installing this skill. You can also ask `run npx builder-doctor rules` which will check for common issues with rule files.
+
+## Import Prototype
+Import a Builder.io prototype into the current project using the Builder dev-tools CLI.
+
+Ask Builder to run `npx builder-doctor install-skill import-prototype` and it will be installed in your project. 
+
+Or you can run locally into GitHub CoPilot with:
+```bash
+run npx --yes builder-doctor install-skill import-prototype --agent github
+```
+
+Or you can run locally into Claude Code with:
+```bash
+run npx --yes builder-doctor install-skill import-prototype --agent claude
+```
+
+### Using the skill
+
+Share a `https://builder.io/app/projects/...` URL with Builder and say what you want to import (e.g. "import the hero section" or "import the full page design"). The skill will run the Builder dev-tools CLI to pull the prototype into your project.
+
+## Manual Installation
 
 Copy any skill directory into your project's `.builder/skills/` folder:
 
