@@ -73,6 +73,54 @@ run npx --yes builder-doctor install-skill import-prototype --agent claude
 
 Share a `https://builder.io/app/projects/...` URL with Builder and say what you want to import (e.g. "import the hero section" or "import the full page design"). The skill will run the Builder dev-tools CLI to pull the prototype into your project.
 
+## Fusion to Publish
+Register Fusion-built React components for use in Builder.io Publish's visual editor.
+
+Ask Builder to `run npx builder-doctor install-skill fusion-to-publish` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill fusion-to-publish
+```
+
+### Using the skill
+
+After installing, ask Builder to register your Fusion components for Publish. The skill guides project detection, registry scaffolding, and component registration.
+
+## Fusion to Publish V2
+Enhanced Fusion-to-Publish flow with helper scripts for project detection, component scanning, and registration logging.
+
+Ask Builder to `run npx builder-doctor install-skill fusion-to-publish-v2` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill fusion-to-publish-v2
+```
+
+### Using the skill
+
+Ask Builder to run the V2 Fusion-to-Publish workflow. This version uses script helpers to detect project setup and scan components before registration.
+
+## Android Native
+Build and run the Android app on an emulator or physical device using Gradle, `adb`, and `native-run`.
+
+Ask Builder to `run npx builder-doctor install-skill android-native` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill android-native
+```
+
+### Using the skill
+
+Ask Builder to build and launch your Android app. The skill helps with Gradle build/run commands and device or emulator targeting.
+
+## iOS Native
+Build and run the iOS app on a simulator or physical device using `xcodebuild` and `native-run`.
+
+Ask Builder to `run npx builder-doctor install-skill ios-native` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill ios-native
+```
+
+### Using the skill
+
+Ask Builder to build and launch your iOS app. The skill helps with simulator/device selection and `xcodebuild` command flows.
+
 ## Manual Installation
 
 Copy any skill directory into your project's `.builder/skills/` folder:
