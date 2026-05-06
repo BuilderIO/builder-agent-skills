@@ -13,6 +13,8 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [skill-creator](./skill-creator/)               | Create new skills, improve existing skills, and understand skill best practices for Builder.io |
 | [fusion-to-publish](./fusion-to-publish/)       | Register Fusion-built React components for use in Builder.io Publish's visual editor           |
 | [fusion-to-publish-v2](./fusion-to-publish-v2/) | Same as above + helper scripts for project detection, component scanning, and registration log |
+| [android-native](./android-native/)               | Build and run the Android app on an emulator or physical device using Gradle, `adb`, and `native-run` |
+| [ios-native](./ios-native/)                       | Build and run the iOS app on a simulator or physical device using `xcodebuild` and `native-run` |
 | [rules-reviewer](./rules-reviewer/)               | Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`)   |
 | [import-prototype](./import-prototype/)           | Import a Builder.io prototype into the current project using the Builder dev-tools CLI          |
 
@@ -94,6 +96,44 @@ curl -sL https://raw.githubusercontent.com/BuilderIO/builder-agent-skills/main/s
 ```
 
 After installing, start a new session for the skill to load.
+
+## Creating Your Own Skills
+
+1. Install the **skill-creator** skill into your Builder.io project (see Installation above)
+2. Open your project in Builder and say "I want to create a skill that does X"
+3. The skill-creator will guide you through the process
+
+
+## Project Structure
+
+```
+builder-agent-skills/
+├── skill-creator/           # Skill for creating new skills
+│   ├── SKILL.md
+│   └── references/
+│       ├── frontmatter-reference.md
+│       └── examples.md
+├── fusion-to-publish/       # Fusion → Publish component registration
+│   ├── SKILL.md
+│   └── references/
+│       ├── sdk-reference.md
+│       ├── scaffolding-templates.md
+│       └── examples.md
+├── fusion-to-publish-v2/    # Enhanced version with scripts and registration log
+│   ├── SKILL.md
+│   ├── references/
+│   │   ├── sdk-reference.md
+│   │   ├── scaffolding-templates.md
+│   │   └── examples.md
+│   └── scripts/
+│       ├── detect-project.sh
+│       └── scan-components.sh
+├── android-native/          # Build and run Android app
+│   └── SKILL.md
+├── ios-native/              # Build and run iOS app
+│   └── SKILL.md
+└── README.md
+```
 
 ## Contributing
 
