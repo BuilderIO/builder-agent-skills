@@ -13,6 +13,8 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [skill-creator](./skill-creator/)               | Create new skills, improve existing skills, and understand skill best practices for Builder.io |
 | [fusion-to-publish](./fusion-to-publish/)       | Register Fusion-built React components for use in Builder.io Publish's visual editor           |
 | [fusion-to-publish-v2](./fusion-to-publish-v2/) | Same as above + helper scripts for project detection, component scanning, and registration log |
+| [android-native](./android-native/)               | Build and run the Android app on an emulator or physical device using Gradle, `adb`, and `native-run` |
+| [ios-native](./ios-native/)                       | Build and run the iOS app on a simulator or physical device using `xcodebuild` and `native-run` |
 
 ## Installation
 
@@ -71,6 +73,10 @@ builder-agent-skills/
 │   └── scripts/
 │       ├── detect-project.sh
 │       └── scan-components.sh
+├── android-native/          # Build and run Android app
+│   └── SKILL.md
+├── ios-native/              # Build and run iOS app
+│   └── SKILL.md
 └── README.md
 ```
 
