@@ -24,6 +24,8 @@ You can install skills by asking Builder to `run npx builder-doctor` which will 
 - `npx builder-doctor install-skill fusion-to-publish`
 - `npx builder-doctor install-skill rules-reviewer`
 - `npx builder-doctor install-skill import-prototype`
+- `npx builder-doctor install-skill android-native`
+- `npx builder-doctor install-skill ios-native`
 
 
 ## Skill Creator
