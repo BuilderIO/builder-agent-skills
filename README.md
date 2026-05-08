@@ -17,6 +17,8 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [ios-native](./ios-native/)                       | Build and run the iOS app on a simulator or physical device using `xcodebuild` and `native-run` |
 | [rules-reviewer](./rules-reviewer/)               | Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`)   |
 | [import-prototype](./import-prototype/)           | Import a Builder.io prototype into the current project using the Builder dev-tools CLI          |
+| [create-instructions](./create-instructions/)     | Analyze the project's coding conventions and produce a concise `AGENTS.md`                     |
+| [mobile-testing](./mobile-testing/)               | Install Maestro, run end-to-end tests, and create new test flows for iOS and Android apps       |
 
 ## Installation
 You can install skills by asking Builder to `run npx builder-doctor` which will give you an option to install a skill. You can also quickly add a specific skill by asking:
@@ -26,6 +28,8 @@ You can install skills by asking Builder to `run npx builder-doctor` which will 
 - `npx builder-doctor install-skill import-prototype`
 - `npx builder-doctor install-skill android-native`
 - `npx builder-doctor install-skill ios-native`
+- `npx builder-doctor install-skill create-instructions`
+- `npx builder-doctor install-skill mobile-testing`
 
 
 ## Skill Creator
@@ -96,6 +100,35 @@ npx builder-doctor install-skill fusion-to-publish-v2
 ### Using the skill
 
 Ask Builder to run the V2 Fusion-to-Publish workflow. This version uses script helpers to detect project setup and scan components before registration.
+
+## Mobile Testing
+Run end-to-end UI tests on iOS and Android using Maestro. Covers installing Maestro, building apps, booting simulators/emulators, running existing flows, and authoring new ones.
+
+Ask Builder to `run npx builder-doctor install-skill mobile-testing` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill mobile-testing
+```
+
+### Using the skill
+
+Make sure [Maestro](https://maestro.dev/) is installed by running:
+```
+curl -Ls "https://get.maestro.mobile.dev" | bash
+```
+
+After installing, ask Builder to test your mobile app (e.g. "run the smoke test on iOS" or "write a Maestro flow for the login screen"). The skill handles Maestro installation, simulator/emulator setup, running flows from `maestro/`, and reporting pass/fail results with screenshot and log paths.
+
+## Create Instructions
+Analyze the project's coding conventions and produce a concise `AGENTS.md` at the project root.
+
+Ask Builder to `run npx builder-doctor install-skill create-instructions` and it will be installed in your project. Or you can run locally with:
+```bash
+npx builder-doctor install-skill create-instructions
+```
+
+### Using the skill
+
+After installing, ask Builder "@create-instructions". The skill will explore your codebase, identify project-specific patterns, and write a concise `AGENTS.md` with up to 20 non-obvious, project-specific conventions. It will not overwrite an existing `AGENTS.md`.
 
 ## Android Native
 Build and run the Android app on an emulator or physical device using Gradle, `adb`, and `native-run`.
@@ -181,6 +214,10 @@ builder-agent-skills/
 ├── android-native/          # Build and run Android app
 │   └── SKILL.md
 ├── ios-native/              # Build and run iOS app
+│   └── SKILL.md
+├── create-instructions/     # Generate AGENTS.md from project conventions
+│   └── SKILL.md
+├── mobile-testing/          # End-to-end UI testing with Maestro for iOS and Android
 │   └── SKILL.md
 └── README.md
 ```
