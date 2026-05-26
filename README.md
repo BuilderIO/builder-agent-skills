@@ -19,6 +19,7 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [import-prototype](./import-prototype/)           | Import a Builder.io prototype into the current project using the Builder dev-tools CLI          |
 | [create-instructions](./create-instructions/)     | Analyze the project's coding conventions and produce a concise `AGENTS.md`                     |
 | [mobile-testing](./mobile-testing/)               | Install Maestro, run end-to-end tests, and create new test flows for iOS and Android apps       |
+| [hallmark](./hallmark/)                           | Anti-AI-slop design skill for building UI, auditing designs, redesigning pages, and extracting design DNA from screenshots or URLs |
 
 ## Installation
 You can quickly add a specific skill by asking:
@@ -30,6 +31,7 @@ You can quickly add a specific skill by asking:
 - `npx skills add BuilderIO/builder-agent-skills --skill ios-native`
 - `npx skills add BuilderIO/builder-agent-skills --skill create-instructions`
 - `npx skills add BuilderIO/builder-agent-skills --skill mobile-testing`
+- `npx skills add BuilderIO/builder-agent-skills --skill hallmark`
 
 
 ## Skill Creator
@@ -154,6 +156,23 @@ npx skills add BuilderIO/builder-agent-skills --skill ios-native
 
 Ask Builder to build and launch your iOS app. The skill helps with simulator/device selection and `xcodebuild` command flows.
 
+## Hallmark
+An anti-AI-slop design skill for building UI, auditing existing designs, redesigning pages, and extracting design DNA from screenshots or URLs.
+
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill hallmark` and it will be installed in your project. Or you can run locally with:
+```bash
+npx skills add BuilderIO/builder-agent-skills --skill hallmark
+```
+
+### Using the skill
+
+After installing, describe what you want to build. Hallmark will ask three questions (audience, use case, tone) before generating anything. You can also use the explicit verbs:
+- `hallmark audit <target>` — score existing UI against the anti-pattern list; returns a punch list, no edits
+- `hallmark redesign <target>` — keep copy and brand, replace the structural/visual layer
+- `hallmark study <screenshot | URL>` — extract design DNA (macrostructure, type-pairing, colour anchor)
+
+Hallmark enforces structural variety across builds — two pages from different briefs will feel like different sites, not colour-swaps of the same template.
+
 ## Manual Installation
 
 Copy any skill directory into your project's `.builder/skills/` folder:
@@ -218,6 +237,8 @@ builder-agent-skills/
 ├── create-instructions/     # Generate AGENTS.md from project conventions
 │   └── SKILL.md
 ├── mobile-testing/          # End-to-end UI testing with Maestro for iOS and Android
+│   └── SKILL.md
+├── hallmark/                # Anti-AI-slop design skill for UI generation and auditing
 │   └── SKILL.md
 └── README.md
 ```
