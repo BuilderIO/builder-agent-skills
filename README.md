@@ -21,23 +21,23 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [mobile-testing](./mobile-testing/)               | Install Maestro, run end-to-end tests, and create new test flows for iOS and Android apps       |
 
 ## Installation
-You can install skills by asking Builder to `run npx builder-doctor` which will give you an option to install a skill. You can also quickly add a specific skill by asking:
-- `npx builder-doctor install-skill skill-creator`
-- `npx builder-doctor install-skill fusion-to-publish`
-- `npx builder-doctor install-skill rules-reviewer`
-- `npx builder-doctor install-skill import-prototype`
-- `npx builder-doctor install-skill android-native`
-- `npx builder-doctor install-skill ios-native`
-- `npx builder-doctor install-skill create-instructions`
-- `npx builder-doctor install-skill mobile-testing`
+You can quickly add a specific skill by asking:
+- `npx skills add BuilderIO/builder-agent-skills --skill skill-creator`
+- `npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish`
+- `npx skills add BuilderIO/builder-agent-skills --skill rules-reviewer`
+- `npx skills add BuilderIO/builder-agent-skills --skill import-prototype`
+- `npx skills add BuilderIO/builder-agent-skills --skill android-native`
+- `npx skills add BuilderIO/builder-agent-skills --skill ios-native`
+- `npx skills add BuilderIO/builder-agent-skills --skill create-instructions`
+- `npx skills add BuilderIO/builder-agent-skills --skill mobile-testing`
 
 
 ## Skill Creator
 Create new skills, improve existing skills, and understand skill best practices for Builder.io
 
-Ask Builder to `run npx builder-doctor install-skill skill-creator` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill skill-creator` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx builder-doctor install-skill skill-creator
+npx skills add BuilderIO/builder-agent-skills --skill skill-creator
 ```
 
 ### Creating Your Own Skills
@@ -49,9 +49,9 @@ npx builder-doctor install-skill skill-creator
 ## Rule Reviewer
 Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`).
 
-Ask Builder to `run npx builder-doctor install-skill rules-reviewer` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill rules-reviewer` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx builder-doctor install-skill rules-reviewer
+npx skills add BuilderIO/builder-agent-skills --skill rules-reviewer
 ```
 
 ### Reviewing rules
@@ -61,16 +61,16 @@ Ask Builder to `Review my rules` after installing this skill. You can also ask `
 ## Import Prototype
 Import a Builder.io prototype into the current project using the Builder dev-tools CLI.
 
-Ask Builder to run `npx builder-doctor install-skill import-prototype` and it will be installed in your project. 
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill import-prototype` and it will be installed in your project.
 
 Or you can run locally into GitHub CoPilot with:
 ```bash
-run npx --yes builder-doctor install-skill import-prototype --agent github
+npx skills add BuilderIO/builder-agent-skills --skill import-prototype --agent github
 ```
 
 Or you can run locally into Claude Code with:
 ```bash
-run npx --yes builder-doctor install-skill import-prototype --agent claude
+npx skills add BuilderIO/builder-agent-skills --skill import-prototype --agent claude
 ```
 
 ### Using the skill
@@ -80,9 +80,9 @@ Share a `https://builder.io/app/projects/...` URL with Builder and say what you 
 ## Fusion to Publish
 Register Fusion-built React components for use in Builder.io Publish's visual editor.
 
-Ask Builder to `run npx builder-doctor install-skill fusion-to-publish` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx builder-doctor install-skill fusion-to-publish
+npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish
 ```
 
 ### Using the skill
@@ -92,9 +92,9 @@ After installing, ask Builder to register your Fusion components for Publish. Th
 ## Fusion to Publish V2
 Enhanced Fusion-to-Publish flow with helper scripts for project detection, component scanning, and registration logging.
 
-Ask Builder to `run npx builder-doctor install-skill fusion-to-publish-v2` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish-v2` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx builder-doctor install-skill fusion-to-publish-v2
+npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish-v2
 ```
 
 ### Using the skill
@@ -104,9 +104,9 @@ Ask Builder to run the V2 Fusion-to-Publish workflow. This version uses script h
 ## Mobile Testing
 Run end-to-end UI tests on iOS and Android using Maestro. Covers installing Maestro, building apps, booting simulators/emulators, running existing flows, and authoring new ones.
 
-Ask Builder to `run npx builder-doctor install-skill mobile-testing` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill mobile-testing` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx builder-doctor install-skill mobile-testing
+npx skills add BuilderIO/builder-agent-skills --skill mobile-testing
 ```
 
 ### Using the skill
@@ -121,9 +121,9 @@ After installing, ask Builder to test your mobile app (e.g. "run the smoke test 
 ## Create Instructions
 Analyze the project's coding conventions and produce a concise `AGENTS.md` at the project root.
 
-Ask Builder to `run npx builder-doctor install-skill create-instructions` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill create-instructions` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx builder-doctor install-skill create-instructions
+npx skills add BuilderIO/builder-agent-skills --skill create-instructions
 ```
 
 ### Using the skill
@@ -133,9 +133,9 @@ After installing, ask Builder "@create-instructions". The skill will explore you
 ## Android Native
 Build and run the Android app on an emulator or physical device using Gradle, `adb`, and `native-run`.
 
-Ask Builder to `run npx builder-doctor install-skill android-native` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill android-native` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx builder-doctor install-skill android-native
+npx skills add BuilderIO/builder-agent-skills --skill android-native
 ```
 
 ### Using the skill
@@ -145,9 +145,9 @@ Ask Builder to build and launch your Android app. The skill helps with Gradle bu
 ## iOS Native
 Build and run the iOS app on a simulator or physical device using `xcodebuild` and `native-run`.
 
-Ask Builder to `run npx builder-doctor install-skill ios-native` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill ios-native` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx builder-doctor install-skill ios-native
+npx skills add BuilderIO/builder-agent-skills --skill ios-native
 ```
 
 ### Using the skill
