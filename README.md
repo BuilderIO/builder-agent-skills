@@ -20,6 +20,7 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [create-instructions](./create-instructions/)     | Analyze the project's coding conventions and produce a concise `AGENTS.md`                     |
 | [mobile-testing](./mobile-testing/)               | Install Maestro, run end-to-end tests, and create new test flows for iOS and Android apps       |
 | [hallmark](./hallmark/)                           | Anti-AI-slop design skill for building UI, auditing designs, redesigning pages, and extracting design DNA from screenshots or URLs |
+| [agent-browser](./agent-browser/)                 | Browser automation CLI for AI agents — navigate pages, fill forms, click buttons, take screenshots, scrape data, and test web apps |
 
 ## Installation
 You can quickly add a specific skill by asking:
@@ -32,6 +33,7 @@ You can quickly add a specific skill by asking:
 - `npx skills add BuilderIO/builder-agent-skills --skill create-instructions`
 - `npx skills add BuilderIO/builder-agent-skills --skill mobile-testing`
 - `npx skills add BuilderIO/builder-agent-skills --skill hallmark`
+- `npx skills add BuilderIO/builder-agent-skills --skill agent-browser`
 
 
 ## Skill Creator
@@ -64,16 +66,6 @@ Ask Builder to `Review my rules` after installing this skill. You can also ask `
 Import a Builder.io prototype into the current project using the Builder dev-tools CLI.
 
 Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill import-prototype` and it will be installed in your project.
-
-Or you can run locally into GitHub CoPilot with:
-```bash
-npx skills add BuilderIO/builder-agent-skills --skill import-prototype --agent github
-```
-
-Or you can run locally into Claude Code with:
-```bash
-npx skills add BuilderIO/builder-agent-skills --skill import-prototype --agent claude
-```
 
 ### Using the skill
 
@@ -173,6 +165,33 @@ After installing, describe what you want to build. Hallmark will ask three quest
 
 Hallmark enforces structural variety across builds — two pages from different briefs will feel like different sites, not colour-swaps of the same template.
 
+## Agent Browser
+Fast browser automation CLI for AI agents. Automate Chrome/Chromium via CDP with accessibility-tree snapshots for reliable element interaction.
+
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill agent-browser` and it will be installed in your project. Or you can run locally with:
+```bash
+npx skills add BuilderIO/builder-agent-skills --skill agent-browser
+```
+
+### Using the skill
+
+First install the CLI:
+```bash
+npm i -g agent-browser && agent-browser install
+```
+
+After installing the skill, ask Builder to automate any browser task — navigating pages, filling forms, clicking buttons, taking screenshots, scraping data, or running exploratory QA. The skill also supports Electron desktop apps (VS Code, Slack, Discord, Figma), Slack workspace automation, and cloud browsers via AWS Bedrock AgentCore.
+
+Load specialized sub-skills from the CLI for specific use cases:
+```bash
+agent-browser skills get core             # workflows, common patterns, troubleshooting
+agent-browser skills get electron          # Electron desktop apps
+agent-browser skills get slack             # Slack workspace automation
+agent-browser skills get dogfood           # Exploratory testing / QA / bug hunts
+agent-browser skills get vercel-sandbox    # agent-browser inside Vercel Sandbox microVMs
+agent-browser skills get agentcore         # AWS Bedrock AgentCore cloud browsers
+```
+
 ## Manual Installation
 
 Copy any skill directory into your project's `.builder/skills/` folder:
@@ -239,6 +258,8 @@ builder-agent-skills/
 ├── mobile-testing/          # End-to-end UI testing with Maestro for iOS and Android
 │   └── SKILL.md
 ├── hallmark/                # Anti-AI-slop design skill for UI generation and auditing
+│   └── SKILL.md
+├── agent-browser/           # Browser automation CLI for AI agents
 │   └── SKILL.md
 └── README.md
 ```
