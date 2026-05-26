@@ -21,6 +21,7 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [mobile-testing](./mobile-testing/)               | Install Maestro, run end-to-end tests, and create new test flows for iOS and Android apps       |
 | [hallmark](./hallmark/)                           | Anti-AI-slop design skill for building UI, auditing designs, redesigning pages, and extracting design DNA from screenshots or URLs |
 | [agent-browser](./agent-browser/)                 | Browser automation CLI for AI agents — navigate pages, fill forms, click buttons, take screenshots, scrape data, and test web apps |
+| [playwright](./playwright/)                       | Browser automation and Playwright test authoring via `playwright-cli` — interact with live pages, generate tests, debug failures, and run spec-driven workflows |
 
 ## Installation
 You can quickly add a specific skill by asking:
@@ -34,6 +35,7 @@ You can quickly add a specific skill by asking:
 - `npx skills add BuilderIO/builder-agent-skills --skill mobile-testing`
 - `npx skills add BuilderIO/builder-agent-skills --skill hallmark`
 - `npx skills add BuilderIO/builder-agent-skills --skill agent-browser`
+- `npx skills add BuilderIO/builder-agent-skills --skill playwright`
 
 
 ## Skill Creator
@@ -165,6 +167,23 @@ After installing, describe what you want to build. Hallmark will ask three quest
 
 Hallmark enforces structural variety across builds — two pages from different briefs will feel like different sites, not colour-swaps of the same template.
 
+## Playwright
+Browser automation and Playwright test authoring using `playwright-cli`. Drive a live browser interactively, generate Playwright TypeScript from every action, run and debug tests, and work through a full plan → generate → heal spec-driven workflow.
+
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill playwright` and it will be installed in your project. Or you can run locally with:
+```bash
+npx skills add BuilderIO/builder-agent-skills --skill playwright
+```
+
+### Using the skill
+
+After installing, ask Builder to automate a browser task, write or debug a Playwright test, or run the spec-driven workflow. Key capabilities include:
+- Interactive browser control with accessibility snapshots
+- Automatic Playwright TypeScript code generation from actions
+- Running and debugging tests with `--debug=cli` and live attach
+- Network mocking, storage management, tracing, and video recording
+- Spec-driven plan → generate → heal test authoring
+
 ## Agent Browser
 Fast browser automation CLI for AI agents. Automate Chrome/Chromium via CDP with accessibility-tree snapshots for reliable element interaction.
 
@@ -261,6 +280,19 @@ builder-agent-skills/
 │   └── SKILL.md
 ├── agent-browser/           # Browser automation CLI for AI agents
 │   └── SKILL.md
+├── playwright/              # Browser automation and Playwright test authoring
+│   ├── SKILL.md
+│   └── references/
+│       ├── playwright-tests.md
+│       ├── spec-driven-testing.md
+│       ├── test-generation.md
+│       ├── request-mocking.md
+│       ├── storage-state.md
+│       ├── session-management.md
+│       ├── tracing.md
+│       ├── video-recording.md
+│       ├── running-code.md
+│       └── element-attributes.md
 └── README.md
 ```
 
