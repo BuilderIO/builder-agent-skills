@@ -22,6 +22,7 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [hallmark](./hallmark/)                           | Anti-AI-slop design skill for building UI, auditing designs, redesigning pages, and extracting design DNA from screenshots or URLs |
 | [agent-browser](./agent-browser/)                 | Browser automation CLI for AI agents — navigate pages, fill forms, click buttons, take screenshots, scrape data, and test web apps |
 | [playwright](./playwright/)                       | Browser automation and Playwright test authoring via `playwright-cli` — interact with live pages, generate tests, debug failures, and run spec-driven workflows |
+| [unzip](./unzip/)                                 | Unzip or extract a zip file in the project using `npx extract-zip`                                                                |
 
 ## Installation
 You can quickly add a specific skill by asking:
@@ -36,6 +37,7 @@ You can quickly add a specific skill by asking:
 - `npx skills add BuilderIO/builder-agent-skills --skill hallmark`
 - `npx skills add BuilderIO/builder-agent-skills --skill agent-browser`
 - `npx skills add BuilderIO/builder-agent-skills --skill playwright`
+- `npx skills add BuilderIO/builder-agent-skills --skill unzip`
 
 
 ## Skill Creator
@@ -211,6 +213,18 @@ agent-browser skills get vercel-sandbox    # agent-browser inside Vercel Sandbox
 agent-browser skills get agentcore         # AWS Bedrock AgentCore cloud browsers
 ```
 
+## Unzip
+Unzip or extract a zip file in the project using `npx extract-zip`.
+
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill unzip` and it will be installed in your project. Or you can run locally with:
+```bash
+npx skills add BuilderIO/builder-agent-skills --skill unzip
+```
+
+### Using the skill
+
+After installing, ask Builder to unzip a file (e.g. "unzip the file" or "extract the archive"). The skill finds the most recently modified `.zip` file and extracts it to the project root, automatically handling base64-encoded zips, installing dependencies if needed, and restarting the dev server.
+
 ## Manual Installation
 
 Copy any skill directory into your project's `.builder/skills/` folder:
@@ -293,6 +307,8 @@ builder-agent-skills/
 │       ├── video-recording.md
 │       ├── running-code.md
 │       └── element-attributes.md
+├── unzip/                   # Unzip or extract a zip file
+│   └── SKILL.md
 └── README.md
 ```
 
