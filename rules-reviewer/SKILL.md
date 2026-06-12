@@ -49,6 +49,8 @@ Search the project for:
 - Common mistakes: `.builderrule` (missing s)
 - Note: `AGENTS.md` and `agents.md` are both valid — match case-insensitively
 
+**Also scan for `.md` files that appear to contain agent rules** (see "Detecting Agent-Rules .md Files" below). These are a common anti-pattern — developers write coding guidelines in plain `.md` files instead of properly structured rules files.
+
 ### Step 2: Analyze Each File
 
 For each file, check:
@@ -61,6 +63,47 @@ For each file, check:
 
 Use the template from `assets/review-template.md` to structure your report.
 
+## Detecting Agent-Rules .md Files
+
+Scan all `.md` files in the project (excluding `node_modules`, `.git`, build outputs). Flag a file as a **likely agent-rules file** if it meets 2 or more of these signals:
+
+**Name signals** (high confidence alone):
+- Name contains: `AGENTS`, `RULES`, `GUIDELINES`, `CONVENTIONS`, `STANDARDS`, `CODING`, `SCAFFOLDING`, `ARCHITECTURE`, `CHECKLIST`
+- Examples: `AGENTS.md`, `CODING_STANDARDS.md`, `SCAFFOLDING_CHECKLIST.md`, `MODULE_ARCHITECTURE.md`
+
+**Content signals** (check first ~50 lines):
+- Contains `DO NOT` / `DON'T` / `MUST` / `ALWAYS` / `NEVER` in structured lists
+- Contains `## Rules`, `## Guidelines`, `## Conventions`, `## Standards` headers
+- References specific file paths or folder structure in the project
+- Contains ✅ / ❌ patterns indicating do/don't lists
+- Contains `alwaysApply`, `globs`, frontmatter-like blocks
+- Contains code examples paired with rule instructions
+
+When flagged, treat these files as **misplaced rules files** and include them in the analysis with the issue: "Agent-rules content in plain .md file — should be migrated to `.builder/rules/*.mdc`".
+
+## Content Minimization Principle
+
+When migrating or auditing rules, apply this principle: **only include what a coding agent cannot infer on its own.**
+
+### Agents already know — omit these:
+- General best practices ("write clean code", "follow DRY", "use SOLID principles")
+- How the language/framework works (TypeScript syntax, React hooks API, Next.js routing)
+- Standard patterns for the tech stack (e.g., "use functional components" for React)
+- Generic advice ("handle errors", "write tests", "use meaningful names")
+- How to use common libraries (the agent has training data for these)
+
+### Agents don't know — keep these:
+- **Project-specific folder structure** (exact paths that differ from conventions)
+- **Which libraries and versions** are in use in this project
+- **Custom naming conventions** that deviate from common patterns
+- **Non-obvious architectural decisions** (e.g., why a specific pattern is enforced)
+- **Business domain rules** (domain concepts, data models, terminology)
+- **Existing components/hooks/utils** the agent should reuse instead of recreating
+- **Project-specific commands** (dev, build, test, lint scripts)
+- **Constraints and forbidden patterns** specific to this codebase
+
+**Rule of thumb:** If you'd find this rule in a generic blog post about the technology, cut it. If you'd only find it by reading this specific codebase, keep it.
+
 ## Common Issues Checklist
 
 | Issue | Severity |
@@ -68,6 +111,8 @@ Use the template from `assets/review-template.md` to structure your report.
 | File > 200 lines | Critical |
 | > 5 alwaysApply files | Critical |
 | Wrong file naming | Critical |
+| Agent-rules content in plain `.md` file | High |
+| Rules contain only generic advice (agent already knows) | High |
 | Missing frontmatter | High |
 | Missing description | High |
 | Vague rules | High |

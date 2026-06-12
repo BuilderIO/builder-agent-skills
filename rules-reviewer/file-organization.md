@@ -251,6 +251,74 @@ monorepo/
 
 ---
 
+## Migrating Agent-Rules `.md` Files to `.mdc`
+
+Plain `.md` files that contain coding guidelines should be converted to properly scoped `.mdc` files. During migration, apply content minimization: strip anything the agent already knows from its training data and keep only project-specific information.
+
+### Identifying What to Keep vs Cut
+
+**Keep** (project-specific, agent can't infer):
+- Exact folder paths and file naming patterns for this project
+- Which existing hooks/components/utils to reuse
+- Library choices and versions specific to this project
+- Non-obvious constraints or architectural decisions
+- Custom conventions that differ from framework defaults
+
+**Cut** (generic, agent already knows):
+- Framework basics ("use functional components", "React hooks rules")
+- Language features ("use TypeScript for type safety")
+- Generic best practices ("handle errors", "DRY principle")
+- Explanatory paragraphs about why a pattern exists (keep the rule, not the rationale)
+- Enforcement language ("MUST", "CRITICAL", "NON-NEGOTIABLE") — state the rule concisely instead
+
+### Migration Example
+
+```markdown
+# Before: CODING_STANDARDS.md (400 lines — plain .md, verbose, mostly generic)
+
+## TYPES LAYER
+**Rule**: Define ALL TypeScript interfaces & types here FIRST.
+This is critical because it ensures type safety across the codebase.
+TypeScript interfaces should be well-defined and reusable...
+
+✅ CORRECT:
+export interface IUser {
+  id: string;
+  name: string;
+}
+
+❌ WRONG: Types defined in component file
+```
+
+```yaml
+# After: .builder/rules/type-conventions.mdc (~20 lines — specific, scoped)
+---
+description: TypeScript type and interface conventions
+globs:
+  - "src/types/**/*.ts"
+alwaysApply: false
+---
+
+## Type Conventions
+- All shared interfaces in `src/types/{domain}.types.ts`
+- Use `I` prefix for interfaces: `IUser`, `IOrder`
+- Export from `src/types/index.ts` barrel
+- No implementation code in type files
+```
+
+The 400-line file becomes ~20 lines of genuinely useful guidance. The agent knows TypeScript — it doesn't need to be told what an interface is.
+
+### Step-by-Step Migration
+
+1. **Read the source `.md` file** — identify all distinct concerns (components, hooks, API, styles, etc.)
+2. **For each concern**, create `.builder/rules/{concern}.mdc`
+3. **Add frontmatter** — `description`, `globs` scoped to relevant file patterns, `alwaysApply: false`
+4. **Migrate rules** — for each rule, ask "would a senior dev working with this framework already know this?" If yes, cut it
+5. **Verify size** — each `.mdc` file should be under 100 lines after minimization
+6. **Handle the source file** — either delete it (if rules are now in `.mdc`) or repurpose it as human-facing documentation with a note that machine-readable rules are in `.builder/rules/`
+
+---
+
 ## Migration Strategy
 
 When restructuring existing rules:

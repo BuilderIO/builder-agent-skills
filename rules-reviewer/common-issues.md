@@ -143,7 +143,82 @@ globs:
 
 ## High Priority Issues
 
-### 6. Vague Rules
+### 6. Agent-Rules Content in Plain `.md` Files
+
+**Symptoms:**
+- AI ignores project conventions despite documentation existing
+- Rules are written but not picked up by the rules system
+- Project has `AGENTS.md`, `CODING_STANDARDS.md`, `SCAFFOLDING_CHECKLIST.md`, or similar files at the root
+
+**Detection:** Scan all `.md` files for name/content signals (see SKILL.md "Detecting Agent-Rules .md Files"). Flag files that look like they're instructing the AI rather than documenting for humans.
+
+**Impact:** Plain `.md` files are not guaranteed to be loaded by the rules system. Content may be ignored entirely, or loaded inconsistently. Even when loaded (e.g., `AGENTS.md` in some tools), the file lacks scoping — all rules apply to all files, wasting context.
+
+**Fix:** Migrate to `.builder/rules/*.mdc` with proper frontmatter and glob scoping:
+
+```yaml
+# Before: CODING_STANDARDS.md (plain markdown, no scoping)
+
+# After: .builder/rules/component-standards.mdc
+---
+description: Component structure and naming conventions
+globs:
+  - "src/components/**/*.tsx"
+alwaysApply: false
+---
+
+## Component Rules
+- Place in `src/components/{feature}/{ComponentName}.tsx`
+- Use PascalCase for component names
+- Export named + default from index.ts
+```
+
+**Migration steps:**
+1. Identify the domains covered by the `.md` file (components, API, styling, etc.)
+2. Create one `.mdc` file per domain in `.builder/rules/`
+3. Add frontmatter with `description` and `globs` scoped to relevant files
+4. Copy only the project-specific rules (see Content Minimization Principle)
+5. Delete or repurpose the original `.md` file as human-only documentation
+
+---
+
+### 7. Rules Contain Only Generic Advice
+
+**Symptoms:**
+- Rules file is large but AI still generates inconsistent code
+- Rules say things like "write clean code", "follow best practices", "use meaningful names"
+- Rules explain how the language/framework works rather than project specifics
+
+**Detection:** Review each rule. Ask: "Would this appear in a generic blog post or framework docs?" If yes, it's generic and should be cut.
+
+**Examples of generic rules to cut:**
+```markdown
+# Generic — agent already knows this, cut it:
+- Use functional components in React
+- Handle errors with try/catch
+- Use TypeScript for type safety
+- Follow DRY principles
+- Write unit tests for your code
+- Use meaningful variable names
+```
+
+**Examples of specific rules to keep:**
+```markdown
+# Specific — agent needs this, keep it:
+- Components go in `src/features/{feature}/components/{Name}/`
+- Always create a `.types.ts` file alongside each component
+- Export from the barrel at `src/components/index.ts`
+- Reuse existing `useAuth` hook — don't duplicate auth state logic
+- Color tokens defined in `src/styles/tokens.css` — never hardcode hex values
+```
+
+**Impact:** Generic rules consume context budget without adding value. They can also give AI false confidence it's following project conventions when it's actually ignoring the specifics.
+
+**Fix:** For each rule, ask "does the AI need to be told this, or does it know it from training data?" Cut everything the agent would do by default. Keep only what's project-specific, non-obvious, or overrides a default behavior.
+
+---
+
+### 9. Vague Rules
 
 **Symptoms:**
 - Inconsistent code generation
@@ -181,7 +256,7 @@ Use good naming conventions.
 
 ---
 
-### 7. Verbose Rules
+### 10. Verbose Rules
 
 **Symptoms:**
 - File exceeds size limits
@@ -214,7 +289,7 @@ New components:
 
 ---
 
-### 8. Conflicting Rules
+### 11. Conflicting Rules
 
 **Symptoms:**
 - AI produces contradictory code
@@ -245,7 +320,7 @@ Export components as default export.
 
 ## Medium Priority Issues
 
-### 9. No Code Examples
+### 12. No Code Examples
 
 **Symptoms:**
 - AI interprets patterns differently
@@ -278,7 +353,7 @@ export function UserCard({ user, onSelect }: UserCardProps) {
 
 ---
 
-### 10. Overly Broad Globs
+### 13. Overly Broad Globs
 
 **Symptoms:**
 - Rules applied to wrong files
@@ -305,7 +380,7 @@ globs:
 
 ---
 
-### 11. Duplicate Information
+### 14. Duplicate Information
 
 **Symptoms:**
 - Same rules in multiple files
@@ -345,6 +420,8 @@ Use this checklist when reviewing rules files:
 - [ ] All `.mdc` files have frontmatter
 - [ ] All frontmatter has `description` field
 - [ ] File names are correct (`.builderrules`, `agents.md`, `*.mdc`)
+- [ ] No agent-rules content stranded in plain `.md` files
+- [ ] Rules contain only project-specific info (not generic best practices)
 - [ ] No vague/generic rules
 - [ ] Rules use bullets, not paragraphs
 - [ ] No conflicting rules across files
