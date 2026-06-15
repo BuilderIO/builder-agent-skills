@@ -225,6 +225,33 @@ npx skills add BuilderIO/builder-agent-skills --skill unzip
 
 After installing, ask Builder to unzip a file (e.g. "unzip the file" or "extract the archive"). The skill finds the most recently modified `.zip` file and extracts it to the project root, automatically handling base64-encoded zips, installing dependencies if needed, and restarting the dev server.
 
+## Orchestrator
+Breaks a large coding task into the smallest independent subtasks and delegates each one to a `worker` subagent. The orchestrator plans, delegates, tracks progress with the task tool, and verifies every result — it never writes or modifies code itself. Workers do the implementation, while the orchestrator coordinates parallel work, manages dependencies, and reports a final summary. Use it when a request is large enough to benefit from being split into focused, independently executable pieces of work.
+
+Install with:
+```bash
+npx builder-doctor install-plugin orchestrator
+```
+
+In this [demonstration video](https://www.loom.com/share/0766156ef0ca49198b9c767cb7b361b7) comparing a typical flow to an orchestrated flow.
+
+Using an orchestrator with a worker that uses a cheaper model reduces the cost ~30%
+
+| Metric         | Non Orchestrated | Orchestrated |
+| -------------- | ---------------- | ------------ |
+| Total Messages | 24               | 19           |
+| Total Cost     | $1.3724          | $0.9885      |
+| Total Credits  | 34.324c          | 24.722c      |
+| Total Time     | 419.31s          | 252.97s      |
+| Avg. Latency   | 2.16s            | 1.74s        |
+| Total Files    | 5                | 5            |
+| Total LoC      | 941              | 781          |
+| Errors         | 0                | 0            |
+
+### Using the plugin
+
+After installing, ask Builder to orchestrate a multi-part task (e.g. "build out the dashboard with separate components for the chart, filters, and table"). The orchestrator splits the work into subtasks, delegates them to workers, and verifies each result before reporting back.
+
 ## Manual Installation
 
 Copy any skill directory into your project's `.builder/skills/` folder:
