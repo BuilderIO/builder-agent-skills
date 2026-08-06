@@ -23,6 +23,8 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [agent-browser](./agent-browser/)                 | Browser automation CLI for AI agents — navigate pages, fill forms, click buttons, take screenshots, scrape data, and test web apps |
 | [playwright](./playwright/)                       | Browser automation and Playwright test authoring via `playwright-cli` — interact with live pages, generate tests, debug failures, and run spec-driven workflows |
 | [unzip](./unzip/)                                 | Unzip or extract a zip file in the project using `npx extract-zip`                                                                |
+| [allow-commands](./allow-commands/)                 | Safely add command allowlist entries to an existing `builder.config.json` without removing existing entries                       |
+| [grill-me](./grill-me/)                             | Stress-test plans and decisions through structured interviews while maintaining domain language and durable decisions             |
 
 ## Installation
 You can quickly add a specific skill by asking:
@@ -38,6 +40,8 @@ You can quickly add a specific skill by asking:
 - `npx skills add BuilderIO/builder-agent-skills --skill agent-browser`
 - `npx skills add BuilderIO/builder-agent-skills --skill playwright`
 - `npx skills add BuilderIO/builder-agent-skills --skill unzip`
+- `npx skills add BuilderIO/builder-agent-skills --skill allow-commands`
+- `npx skills add BuilderIO/builder-agent-skills --skill grill-me`
 
 
 ## Skill Creator
@@ -225,6 +229,30 @@ npx skills add BuilderIO/builder-agent-skills --skill unzip
 
 After installing, ask Builder to unzip a file (e.g. "unzip the file" or "extract the archive"). The skill finds the most recently modified `.zip` file and extracts it to the project root, automatically handling base64-encoded zips, installing dependencies if needed, and restarting the dev server.
 
+## Allow Commands
+Safely add command allowlist entries to an existing `builder.config.json` while preserving its current configuration.
+
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill allow-commands` and it will be installed in your project. Or you can run locally with:
+```bash
+npx skills add BuilderIO/builder-agent-skills --skill allow-commands
+```
+
+### Using the skill
+
+After installing, ask Builder to allow commands for mobile development, Angular, unzip, or a specific CLI. The skill asks you to select the commands, validates custom entries, and merges them into `allowedCommands` without duplicates. It only updates an existing `builder.config.json`; it does not create one.
+
+## Grill Me
+Stress-test a plan, design, decision, or idea through a structured interview that sharpens domain language and records durable architectural decisions when appropriate.
+
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill grill-me` and it will be installed in your project. Or you can run locally with:
+```bash
+npx skills add BuilderIO/builder-agent-skills --skill grill-me
+```
+
+### Using the skill
+
+After installing, explicitly ask Builder to grill, challenge, interview, or stress-test you about a proposal. The skill inspects the project first, then asks one high-leverage question at a time until the goal, scope, constraints, terminology, and important trade-offs are clear. It can maintain a project `CONTEXT.md` glossary and, with your agreement, concise architecture decision records; it does not begin implementation until you confirm shared understanding.
+
 ## Orchestrator
 Breaks a large coding task into the smallest independent subtasks and delegates each one to a `worker` subagent. The orchestrator plans, delegates, tracks progress with the task tool, and verifies every result — it never writes or modifies code itself. Workers do the implementation, while the orchestrator coordinates parallel work, manages dependencies, and reports a final summary. Use it when a request is large enough to benefit from being split into focused, independently executable pieces of work.
 
@@ -335,6 +363,10 @@ builder-agent-skills/
 │       ├── running-code.md
 │       └── element-attributes.md
 ├── unzip/                   # Unzip or extract a zip file
+│   └── SKILL.md
+├── allow-commands/          # Safely update command allowlists
+│   └── SKILL.md
+├── grill-me/                # Structured interviews for plans and decisions
 │   └── SKILL.md
 └── README.md
 ```
