@@ -25,6 +25,8 @@ Eliminate predictable AI writing patterns from prose.
 
 8. **Cut quotables.** If it sounds like a pull-quote, rewrite it.
 
+9. **Use ASD-STE100 Simplified Technical English**
+
 ## Quick Checks
 
 Before delivering prose:
