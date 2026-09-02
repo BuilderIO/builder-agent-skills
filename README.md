@@ -25,6 +25,7 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [unzip](./unzip/)                                 | Unzip or extract a zip file in the project using `npx extract-zip`                                                                |
 | [allow-commands](./allow-commands/)                 | Safely add command allowlist entries to an existing `builder.config.json` without removing existing entries                       |
 | [grill-me](./grill-me/)                             | Stress-test plans and decisions through structured interviews while maintaining domain language and durable decisions             |
+| [stop-slop](./stop-slop/)                           | Remove predictable AI writing patterns from prose                                                                   |
 
 ## Installation
 You can quickly add a specific skill by asking:
@@ -42,6 +43,7 @@ You can quickly add a specific skill by asking:
 - `npx skills add BuilderIO/builder-agent-skills --skill unzip`
 - `npx skills add BuilderIO/builder-agent-skills --skill allow-commands`
 - `npx skills add BuilderIO/builder-agent-skills --skill grill-me`
+- `npx skills add BuilderIO/builder-agent-skills --skill stop-slop`
 
 
 ## Skill Creator
@@ -253,6 +255,18 @@ npx skills add BuilderIO/builder-agent-skills --skill grill-me
 
 After installing, explicitly ask Builder to grill, challenge, interview, or stress-test you about a proposal. The skill inspects the project first, then asks one high-leverage question at a time until the goal, scope, constraints, terminology, and important trade-offs are clear. It can maintain a project `CONTEXT.md` glossary and, with your agreement, concise architecture decision records; it does not begin implementation until you confirm shared understanding.
 
+## Stop Slop
+Remove predictable AI writing patterns from prose.
+
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill stop-slop` and it will be installed in your project. Or you can run locally with:
+```bash
+npx skills add BuilderIO/builder-agent-skills --skill stop-slop
+```
+
+### Using the skill
+
+After installing, ask Builder to draft, edit, or review prose with stop-slop. It removes filler, formulaic structures, passive voice, vague language, and other common AI tells while using ASD-STE100 Simplified Technical English.
+
 ## Orchestrator
 Breaks a large coding task into the smallest independent subtasks and delegates each one to a `worker` subagent. The orchestrator plans, delegates, tracks progress with the task tool, and verifies every result — it never writes or modifies code itself. Workers do the implementation, while the orchestrator coordinates parallel work, manages dependencies, and reports a final summary. Use it when a request is large enough to benefit from being split into focused, independently executable pieces of work.
 
@@ -368,6 +382,12 @@ builder-agent-skills/
 │   └── SKILL.md
 ├── grill-me/                # Structured interviews for plans and decisions
 │   └── SKILL.md
+├── stop-slop/               # Remove AI writing patterns from prose
+│   ├── SKILL.md
+│   └── references/
+│       ├── examples.md
+│       ├── phrases.md
+│       └── structures.md
 └── README.md
 ```
 
