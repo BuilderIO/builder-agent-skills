@@ -26,6 +26,7 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [allow-commands](./allow-commands/)                 | Safely add command allowlist entries to an existing `builder.config.json` without removing existing entries                       |
 | [grill-me](./grill-me/)                             | Stress-test plans and decisions through structured interviews while maintaining domain language and durable decisions             |
 | [stop-slop](./stop-slop/)                           | Remove predictable AI writing patterns from prose                                                                   |
+| [web-prototype](./web-prototype/)                     | Translate a native or desktop application into a faithful, tested web prototype                                     |
 
 ## Installation
 You can quickly add a specific skill by asking:
@@ -44,6 +45,7 @@ You can quickly add a specific skill by asking:
 - `npx skills add BuilderIO/builder-agent-skills --skill allow-commands`
 - `npx skills add BuilderIO/builder-agent-skills --skill grill-me`
 - `npx skills add BuilderIO/builder-agent-skills --skill stop-slop`
+- `npx skills add BuilderIO/builder-agent-skills --skill web-prototype`
 
 
 ## Skill Creator
@@ -267,6 +269,18 @@ npx skills add BuilderIO/builder-agent-skills --skill stop-slop
 
 After installing, ask Builder to draft, edit, or review prose with stop-slop. It removes filler, formulaic structures, passive voice, vague language, and other common AI tells while using ASD-STE100 Simplified Technical English.
 
+## Web Prototype
+Translate a native or desktop application into a faithful web prototype through source discovery, design and logic capture, gap planning, iterative implementation, and parity review.
+
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill web-prototype` and it will be installed in your project. Or you can run locally with:
+```bash
+npx skills add BuilderIO/builder-agent-skills --skill web-prototype
+```
+
+### Using the skill
+
+After installing, explicitly ask Builder to use the web-prototype skill to replicate a non-web application in an existing web project. The skill identifies the source and prototype, records their pairing, inventories the source experience and business logic, builds a work queue, and verifies each implementation step in the browser. It uses deterministic local mocks instead of production credentials or live user data.
+
 ## Orchestrator
 Breaks a large coding task into the smallest independent subtasks and delegates each one to a `worker` subagent. The orchestrator plans, delegates, tracks progress with the task tool, and verifies every result — it never writes or modifies code itself. Workers do the implementation, while the orchestrator coordinates parallel work, manages dependencies, and reports a final summary. Use it when a request is large enough to benefit from being split into focused, independently executable pieces of work.
 
@@ -388,6 +402,8 @@ builder-agent-skills/
 │       ├── examples.md
 │       ├── phrases.md
 │       └── structures.md
+├── web-prototype/           # Translate native or desktop apps into web prototypes
+│   └── SKILL.md
 └── README.md
 ```
 
