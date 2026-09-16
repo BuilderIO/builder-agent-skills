@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Web Prototype
 
-Replicate a non-web source application in an existing web prototype. Keep durable process files beside this `SKILL.md` so later runs can resume the work and improve the translation.
+Replicate a non-web source application in an existing web prototype. Keep durable process files in `.agents/skills/web-prototype` so later runs can resume the work and improve the translation.
 
 ## Phase 1: Establish the source and prototype
 
@@ -14,7 +14,7 @@ Complete this phase before changing application code.
 
 ### Load saved preferences
 
-Look for `preferences.md` in this skill directory. If it exists, read it and verify that the recorded paths still exist and match their recorded project types. Use valid saved preferences instead of repeating discovery.
+Look for `preferences.md` in `.agents/skills/web-prototype`. If it exists, read it and verify that the recorded paths still exist and match their recorded project types. Use valid saved preferences instead of repeating discovery.
 
 ### Identify source candidates
 
@@ -36,7 +36,7 @@ The prototype is the specific web project or subdirectory where the source exper
 
 Verify that the source uses a non-web framework and the prototype uses a web framework. If there is exactly one credible source and one credible prototype, select them. If multiple candidates exist, briefly explain each candidate and ask the user which pairing to use. Never guess between multiple applications.
 
-Create or update `preferences.md` in this skill directory with confirmed repository-relative paths:
+Create or update `preferences.md` in `.agents/skills/web-prototype` with confirmed repository-relative paths:
 
 ```markdown
 # Web Prototype Preferences
@@ -55,7 +55,7 @@ Inspect the complete source and compare its available experiences with the proto
 
 ### Capture design
 
-Create or update `design.md` in this skill directory as the canonical inventory of everything visual in the source. Preserve concrete file or symbol references so each finding is traceable. Capture at least:
+Create or update `design.md` in `.agents/skills/web-prototype` as the canonical inventory of everything visual in the source. Preserve concrete file or symbol references so each finding is traceable. Capture at least:
 
 - Every screen, page, modal, sheet, overlay, empty state, loading state, error state, and meaningful state variation
 - Every reusable component and its variants, properties, interaction states, content rules, and composition
@@ -71,7 +71,7 @@ Describe observable behavior and relationships rather than copying framework-spe
 
 ### Capture business logic
 
-Create or update `logic.md` in this skill directory as the canonical inventory of source behavior. Preserve concrete file or symbol references and capture at least:
+Create or update `logic.md` in `.agents/skills/web-prototype` as the canonical inventory of source behavior. Preserve concrete file or symbol references and capture at least:
 
 - User journeys, use cases, and the conditions that govern each flow
 - Domain entities, state models, defaults, derived values, calculations, and formatting rules
@@ -85,7 +85,7 @@ Separate business requirements from native-framework plumbing. Record uncertain 
 
 ## Phase 3: Build the work queue
 
-Compare every entry in `design.md` and `logic.md` with the current prototype. Create or update `work.md` in this skill directory as a thorough list of only the outstanding translation work.
+Compare every entry in `design.md` and `logic.md` with the current prototype. Create or update `work.md` in `.agents/skills/web-prototype` as a thorough list of only the outstanding translation work.
 
 Organize the list by page or user journey, then by design and logic. Every work item must include:
 
@@ -117,7 +117,7 @@ Work through `work.md` in dependency order, one coherent item at a time:
 
 If implementation reveals missing or incorrect source knowledge, update `design.md` or `logic.md`, add the resulting gaps to `work.md`, and continue from the corrected documents.
 
-Create or update `learning.md` in this skill directory whenever the work reveals a reusable lesson. Record durable facts such as effective translation patterns, repository conventions, source-to-web mapping decisions, testing techniques, mock strategies, and pitfalls. Do not use it as a chronological activity log. Never store secrets, credentials, or personal data.
+Create or update `learning.md` in `.agents/skills/web-prototype` whenever the work reveals a reusable lesson. Record durable facts such as effective translation patterns, repository conventions, source-to-web mapping decisions, testing techniques, mock strategies, and pitfalls. Do not use it as a chronological activity log. Never store secrets, credentials, or personal data.
 
 Make prototype changes only inside the recorded prototype project unless the user explicitly requests otherwise. Do not modify the source while translating it.
 
