@@ -33,33 +33,33 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 
 ## Installation
 You can quickly add a specific skill by asking:
-- `npx skills add BuilderIO/builder-agent-skills --skill skill-creator`
-- `npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish`
-- `npx skills add BuilderIO/builder-agent-skills --skill rules-reviewer`
-- `npx skills add BuilderIO/builder-agent-skills --skill import-prototype`
-- `npx skills add BuilderIO/builder-agent-skills --skill android-native`
-- `npx skills add BuilderIO/builder-agent-skills --skill ios-native`
-- `npx skills add BuilderIO/builder-agent-skills --skill create-instructions`
-- `npx skills add BuilderIO/builder-agent-skills --skill mobile-testing`
-- `npx skills add BuilderIO/builder-agent-skills --skill hallmark`
-- `npx skills add BuilderIO/builder-agent-skills --skill agent-browser`
-- `npx skills add BuilderIO/builder-agent-skills --skill playwright`
-- `npx skills add BuilderIO/builder-agent-skills --skill unzip`
-- `npx skills add BuilderIO/builder-agent-skills --skill allow-commands`
-- `npx skills add BuilderIO/builder-agent-skills --skill grill-me`
-- `npx skills add BuilderIO/builder-agent-skills --skill stop-slop`
-- `npx skills add BuilderIO/builder-agent-skills --skill web-prototype`
-- `npx skills add BuilderIO/builder-agent-skills --skill improve-codebase`
-- `npx skills add BuilderIO/builder-agent-skills --skill improve-diff`
-- `npx skills add BuilderIO/builder-agent-skills --skill code-review`
+- `npx skills add BuilderIO/builder-agent-skills --skill skill-creator --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill rules-reviewer --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill import-prototype --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill android-native --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill ios-native --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill create-instructions --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill mobile-testing --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill hallmark --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill agent-browser --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill playwright --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill unzip --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill allow-commands --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill grill-me --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill stop-slop --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill web-prototype --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill improve-codebase --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill improve-diff --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill code-review --agent universal`
 
 
 ## Skill Creator
 Create new skills, improve existing skills, and understand skill best practices for Builder.io
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill skill-creator` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill skill-creator --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill skill-creator
+npx skills add BuilderIO/builder-agent-skills --skill skill-creator --agent universal
 ```
 
 ### Creating Your Own Skills
@@ -71,9 +71,9 @@ npx skills add BuilderIO/builder-agent-skills --skill skill-creator
 ## Rule Reviewer
 Review, fix, and create Builder.io Fusion rules files (`.builderrules`, `.mdc`, `agents.md`).
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill rules-reviewer` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill rules-reviewer --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill rules-reviewer
+npx skills add BuilderIO/builder-agent-skills --skill rules-reviewer --agent universal
 ```
 
 ### Reviewing rules
@@ -83,7 +83,7 @@ Ask Builder to `Review my rules` after installing this skill. You can also ask `
 ## Import Prototype
 Import a Builder.io prototype into the current project using the Builder dev-tools CLI.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill import-prototype` and it will be installed in your project.
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill import-prototype --agent universal` and it will be installed in your project.
 
 ### Using the skill
 
@@ -92,9 +92,9 @@ Share a `https://builder.io/app/projects/...` URL with Builder and say what you 
 ## Fusion to Publish
 Register Fusion-built React components for use in Builder.io Publish's visual editor.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish
+npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish --agent universal
 ```
 
 ### Using the skill
@@ -104,9 +104,9 @@ After installing, ask Builder to register your Fusion components for Publish. Th
 ## Fusion to Publish V2
 Enhanced Fusion-to-Publish flow with helper scripts for project detection, component scanning, and registration logging.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish-v2` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish-v2 --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish-v2
+npx skills add BuilderIO/builder-agent-skills --skill fusion-to-publish-v2 --agent universal
 ```
 
 ### Using the skill
@@ -116,9 +116,9 @@ Ask Builder to run the V2 Fusion-to-Publish workflow. This version uses script h
 ## Mobile Testing
 Run end-to-end UI tests on iOS and Android using Maestro. Covers installing Maestro, building apps, booting simulators/emulators, running existing flows, and authoring new ones.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill mobile-testing` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill mobile-testing --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill mobile-testing
+npx skills add BuilderIO/builder-agent-skills --skill mobile-testing --agent universal
 ```
 
 ### Using the skill
@@ -133,9 +133,9 @@ After installing, ask Builder to test your mobile app (e.g. "run the smoke test 
 ## Create Instructions
 Analyze the project's coding conventions and produce a concise `AGENTS.md` at the project root.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill create-instructions` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill create-instructions --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill create-instructions
+npx skills add BuilderIO/builder-agent-skills --skill create-instructions --agent universal
 ```
 
 ### Using the skill
@@ -145,9 +145,9 @@ After installing, ask Builder "@create-instructions". The skill will explore you
 ## Android Native
 Build and run the Android app on an emulator or physical device using Gradle, `adb`, and `native-run`.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill android-native` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill android-native --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill android-native
+npx skills add BuilderIO/builder-agent-skills --skill android-native --agent universal
 ```
 
 ### Using the skill
@@ -157,9 +157,9 @@ Ask Builder to build and launch your Android app. The skill helps with Gradle bu
 ## iOS Native
 Build and run the iOS app on a simulator or physical device using `xcodebuild` and `native-run`.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill ios-native` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill ios-native --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill ios-native
+npx skills add BuilderIO/builder-agent-skills --skill ios-native --agent universal
 ```
 
 ### Using the skill
@@ -169,9 +169,9 @@ Ask Builder to build and launch your iOS app. The skill helps with simulator/dev
 ## Hallmark
 An anti-AI-slop design skill for building UI, auditing existing designs, redesigning pages, and extracting design DNA from screenshots or URLs.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill hallmark` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill hallmark --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill hallmark
+npx skills add BuilderIO/builder-agent-skills --skill hallmark --agent universal
 ```
 
 ### Using the skill
@@ -186,9 +186,9 @@ Hallmark enforces structural variety across builds — two pages from different 
 ## Playwright
 Browser automation and Playwright test authoring using `playwright-cli`. Drive a live browser interactively, generate Playwright TypeScript from every action, run and debug tests, and work through a full plan → generate → heal spec-driven workflow.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill playwright` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill playwright --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill playwright
+npx skills add BuilderIO/builder-agent-skills --skill playwright --agent universal
 ```
 
 ### Using the skill
@@ -203,9 +203,9 @@ After installing, ask Builder to automate a browser task, write or debug a Playw
 ## Agent Browser
 Fast browser automation CLI for AI agents. Automate Chrome/Chromium via CDP with accessibility-tree snapshots for reliable element interaction.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill agent-browser` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill agent-browser --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill agent-browser
+npx skills add BuilderIO/builder-agent-skills --skill agent-browser --agent universal
 ```
 
 ### Using the skill
@@ -230,9 +230,9 @@ agent-browser skills get agentcore         # AWS Bedrock AgentCore cloud browser
 ## Unzip
 Unzip or extract a zip file in the project using `npx extract-zip`.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill unzip` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill unzip --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill unzip
+npx skills add BuilderIO/builder-agent-skills --skill unzip --agent universal
 ```
 
 ### Using the skill
@@ -242,9 +242,9 @@ After installing, ask Builder to unzip a file (e.g. "unzip the file" or "extract
 ## Allow Commands
 Safely add command allowlist entries to an existing `builder.config.json` while preserving its current configuration.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill allow-commands` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill allow-commands --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill allow-commands
+npx skills add BuilderIO/builder-agent-skills --skill allow-commands --agent universal
 ```
 
 ### Using the skill
@@ -254,9 +254,9 @@ After installing, ask Builder to allow commands for mobile development, Angular,
 ## Grill Me
 Stress-test a plan, design, decision, or idea through a structured interview that sharpens domain language and records durable architectural decisions when appropriate.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill grill-me` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill grill-me --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill grill-me
+npx skills add BuilderIO/builder-agent-skills --skill grill-me --agent universal
 ```
 
 ### Using the skill
@@ -266,9 +266,9 @@ After installing, explicitly ask Builder to grill, challenge, interview, or stre
 ## Stop Slop
 Remove predictable AI writing patterns from prose.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill stop-slop` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill stop-slop --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill stop-slop
+npx skills add BuilderIO/builder-agent-skills --skill stop-slop --agent universal
 ```
 
 ### Using the skill
@@ -278,9 +278,9 @@ After installing, ask Builder to draft, edit, or review prose with stop-slop. It
 ## Web Prototype
 Translate a native or desktop application into a faithful web prototype through source discovery, design and logic capture, gap planning, iterative implementation, and parity review.
 
-Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill web-prototype` and it will be installed in your project. Or you can run locally with:
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill web-prototype --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
-npx skills add BuilderIO/builder-agent-skills --skill web-prototype
+npx skills add BuilderIO/builder-agent-skills --skill web-prototype --agent universal
 ```
 
 ### Using the skill
