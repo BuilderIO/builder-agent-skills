@@ -26,6 +26,7 @@ Skills are folders containing a `SKILL.md` file that teach the AI new capabiliti
 | [allow-commands](./allow-commands/)                 | Safely add command allowlist entries to an existing `builder.config.json` without removing existing entries                       |
 | [grill-me](./grill-me/)                             | Stress-test plans and decisions through structured interviews while maintaining domain language and durable decisions             |
 | [stop-slop](./stop-slop/)                           | Remove predictable AI writing patterns from prose                                                                   |
+| [refactoring-ui](./refactoring-ui/)                 | Audit and fix visual hierarchy, spacing, color, and depth in web UIs                                                |
 | [web-prototype](./web-prototype/)                     | Translate a native or desktop application into a faithful, tested web prototype                                     |
 | [improve-codebase](./improve-codebase/)               | Run project-wide code-quality scans and work through the highest-priority issues one at a time                     |
 | [improve-diff](./improve-diff/)                       | Audit the current diff for code-quality issues and fix them interactively                                         |
@@ -48,6 +49,7 @@ You can quickly add a specific skill by asking:
 - `npx skills add BuilderIO/builder-agent-skills --skill allow-commands --agent universal`
 - `npx skills add BuilderIO/builder-agent-skills --skill grill-me --agent universal`
 - `npx skills add BuilderIO/builder-agent-skills --skill stop-slop --agent universal`
+- `npx skills add BuilderIO/builder-agent-skills --skill refactoring-ui --agent universal`
 - `npx skills add BuilderIO/builder-agent-skills --skill web-prototype --agent universal`
 - `npx skills add BuilderIO/builder-agent-skills --skill improve-codebase --agent universal`
 - `npx skills add BuilderIO/builder-agent-skills --skill improve-diff --agent universal`
@@ -275,6 +277,18 @@ npx skills add BuilderIO/builder-agent-skills --skill stop-slop --agent universa
 
 After installing, ask Builder to draft, edit, or review prose with stop-slop. It removes filler, formulaic structures, passive voice, vague language, and other common AI tells while using ASD-STE100 Simplified Technical English.
 
+## Refactoring UI
+Audit and fix visual hierarchy, spacing, color, and depth in web UIs, based on the Refactoring UI principles.
+
+Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill refactoring-ui --agent universal` and it will be installed in your project. Or you can run locally with:
+```bash
+npx skills add BuilderIO/builder-agent-skills --skill refactoring-ui --agent universal
+```
+
+### Using the skill
+
+After installing, ask Builder to fix a UI that looks off, review a design, or improve spacing, color palettes, typography, and component styling. Reference files cover accessibility, advanced patterns, animation, data visualization, and theming and dark mode.
+
 ## Web Prototype
 Translate a native or desktop application into a faithful web prototype through source discovery, design and logic capture, gap planning, iterative implementation, and parity review.
 
@@ -410,6 +424,9 @@ builder-agent-skills/
 │       ├── examples.md
 │       ├── phrases.md
 │       └── structures.md
+├── refactoring-ui/          # Audit and fix visual hierarchy, spacing, color, and depth
+│   ├── SKILL.md
+│   └── references/
 ├── web-prototype/           # Translate native or desktop apps into web prototypes
 │   └── SKILL.md
 └── README.md
