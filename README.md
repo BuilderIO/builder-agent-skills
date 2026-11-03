@@ -278,7 +278,7 @@ npx skills add BuilderIO/builder-agent-skills --skill stop-slop --agent universa
 After installing, ask Builder to draft, edit, or review prose with stop-slop. It removes filler, formulaic structures, passive voice, vague language, and other common AI tells while using ASD-STE100 Simplified Technical English.
 
 ## Refactoring UI
-Audit and fix visual hierarchy, spacing, color, and depth in web UIs, based on the Refactoring UI principles.
+Audit and fix visual hierarchy, spacing, color, and depth in web UIs, based on [the Refactoring UI book](https://refactoringui.com/) by Adam Wathan & Steve Schoger.
 
 Ask Builder to run `npx skills add BuilderIO/builder-agent-skills --skill refactoring-ui --agent universal` and it will be installed in your project. Or you can run locally with:
 ```bash
